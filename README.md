@@ -173,3 +173,61 @@ Fullstack_Cafe/
 ├── manage.py
 ├── .gitignore
 └── README.md
+
+
+---
+
+## 🗄️ Database Design
+
+Sakura Café uses **MySQL** as its relational database.
+
+The application contains the following main entities:
+
+### Product
+
+Stores the café menu items.
+
+| Field | Description |
+|---|---|
+| Product Name | Name of the menu item |
+| Category | Product category |
+| Price | Product price |
+| Availability | Whether the product is currently available |
+| Picture | Uploaded product image |
+
+### Customer
+
+Stores café customer information.
+
+| Field | Description |
+|---|---|
+| Customer Name | Name of the customer |
+| Customer Since | Date the customer was added |
+
+### Orders
+
+Stores customer orders.
+
+| Field | Description |
+|---|---|
+| Customer Reference | Customer associated with the order |
+| Product Reference | Product associated with the order |
+| Order Number | Unique order identifier |
+| Order Date | Date of the order |
+| Quantity | Quantity ordered |
+| Amount | Order amount |
+| GST Amount | GST applicable to the order |
+| Bill Amount | Final bill amount |
+
+### User
+
+The authentication system uses a custom Django user model based on Django's `AbstractUser`.
+
+Additional user information includes:
+
+- Username
+- First name
+- Last name
+- Email
+- Age
+- Password
