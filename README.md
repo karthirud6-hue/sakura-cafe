@@ -29,3 +29,53 @@ simple and responsive web interface.
 The application also includes user authentication, product
 image uploads, database relationships, and a Japanese-inspired
 café interface.
+
+---
+
+## ✨ Features
+
+### 🔐 User Authentication
+
+- User registration and account creation
+- Secure login and logout
+- Custom Django user model
+- Password-based authentication
+- Protected management pages
+
+### ☕ Product Management
+
+- Add new café products
+- View all products
+- Edit existing products
+- Delete products
+- Set product availability
+- Upload product images
+- Display product images in the menu
+
+### 👥 Customer Management
+
+- Add new customers
+- View customer records
+- Edit customer information
+- Delete customers
+- Store customer registration dates
+
+### 🧾 Order Management
+
+- Create new orders
+- View all orders
+- Edit existing orders
+- Delete orders
+- Associate orders with customers and products
+- Store order number, date, and quantity
+
+### 🌸 User Interface
+
+- Japanese-inspired Sakura Café theme
+- Responsive design
+- Custom navigation bar
+- Interactive product cards
+- Styled authentication pages
+- Customer management interface
+- Orders management table
+- Mobile-friendly layout
