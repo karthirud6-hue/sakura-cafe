@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="menu-page">
+
+    <div class="menu-heading">
+        <p class="menu-eyebrow">🌸 SAKURA CAFÉ</p>
+
+        <h1>Our Customers</h1>
+
+        <p>
+            The people who make Sakura Café special.
+        </p>
+
+        <div class="menu-line"></div>
+    </div>
+
+
+    <div class="menu-actions">
+
+        <div>
+            <span class="menu-count">
+                {{ all_customers|length }}
+            </span>
+
+            <span>customers</span>
+        </div>
+
+        <a href="/orders/addcustomers/" class="add-product-btn">
+            <span>＋</span> Add Customer
+        </a>
+
+    </div>
+
+
+    <div class="customer-grid">
+
+        {% for customer in all_customers %}
+
+        <article class="customer-card">
+
+            <div class="customer-icon">
+                🌸
+            </div>
+
+            <div class="customer-info">
+
+                <p class="product-category">
+                    CUSTOMER
+                </p>
+
+                <h2>
+                    {{ customer.customer_name }}
+                </h2>
+
+                <p class="customer-since">
+                    Since
+                    {{ customer.customer_since|default:"—" }}
+                </p>
+
+            </div>
+
+            <div class="customer-actions">
+
+                <a
+                    href="{% url 'customer_update' customer.id %}"
+                    class="edit-btn"
+                >
+                    Edit
+                </a>
+
+                <a
+                    href="{% url 'customer_delete' customer.id %}"
+                    class="delete-btn"
+                >
+                    Delete
+                </a>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="empty-menu">
+
+            <div>🌸</div>
+
+            <h2>No customers yet.</h2>
+
+            <p>
+                Add your first Sakura Café customer.
+            </p>
+
+            <a href="/orders/addcustomers/" class="add-product-btn">
+                ＋ Add Customer
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

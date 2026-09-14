@@ -1,0 +1,200 @@
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sakura Café | Sign Up</title>
+
+    {% bootstrap_css %}
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+
+<body class="signup-page">
+
+    <div class="signup-overlay"></div>
+
+
+    <main class="signup-container">
+
+        <div class="signup-card">
+
+            <div class="login-logo">
+                🌸
+            </div>
+
+            <p class="login-eyebrow">
+                SAKURA CAFÉ
+            </p>
+
+            <h1>
+                Join us
+            </h1>
+
+            <p class="login-subtitle">
+                Create your café account.
+            </p>
+
+
+            {% if error %}
+
+                <div class="login-error">
+                    {{ error }}
+                </div>
+
+            {% endif %}
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <div class="signup-row">
+
+                    <div class="login-field">
+
+                        <label>First Name</label>
+
+                        <input
+                            type="text"
+                            name="first_name"
+                            placeholder="First name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="login-field">
+
+                        <label>Last Name</label>
+
+                        <input
+                            type="text"
+                            name="last_name"
+                            placeholder="Last name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="login-field">
+
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Choose a username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="login-field">
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        name="email_address"
+                        placeholder="your@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="signup-row">
+
+                    <div class="login-field">
+
+                        <label>Age</label>
+
+                        <input
+                            type="number"
+                            name="age"
+                            min="1"
+                            max="120"
+                            placeholder="Age"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="login-field">
+
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <div class="login-divider">
+                <span>or</span>
+            </div>
+
+
+            <p class="signup-prompt">
+
+                Already have an account?
+
+                <a href="/login/">
+                    Login
+                </a>
+
+            </p>
+
+
+            <a
+                href="/"
+                class="back-home"
+            >
+                ← Back to Sakura Café
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

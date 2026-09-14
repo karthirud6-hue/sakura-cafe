@@ -1,0 +1,135 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sakura Café | Login</title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+
+<body class="login-page">
+
+    <div class="login-overlay"></div>
+
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <div class="login-logo">
+                🌸
+            </div>
+
+            <p class="login-eyebrow">
+                SAKURA CAFÉ
+            </p>
+
+            <h1>
+                Welcome back
+            </h1>
+
+            <p class="login-subtitle">
+                Your table is waiting.
+            </p>
+
+
+            {% if error %}
+
+                <div class="login-error">
+                    {{ error }}
+                </div>
+
+            {% endif %}
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <div class="login-field">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="login-field">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Enter Sakura Café
+                </button>
+
+            </form>
+
+
+            <div class="login-divider">
+                <span>or</span>
+            </div>
+
+
+            <p class="signup-prompt">
+                Don't have an account?
+                <a href="/login/signup/">
+                    Create one
+                </a>
+            </p>
+
+
+            <a
+                href="/"
+                class="back-home"
+            >
+                ← Back to Sakura Café
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

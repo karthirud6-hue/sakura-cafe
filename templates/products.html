@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="menu-page">
+
+    <div class="menu-heading">
+
+        <p class="menu-eyebrow">🌸 SAKURA CAFÉ MENU</p>
+
+        <h1>Our Menu</h1>
+
+        <p>
+            Crafted with care, inspired by Japan.
+        </p>
+
+        <div class="menu-line"></div>
+
+    </div>
+
+
+    <div class="menu-actions">
+
+        <div>
+            <span class="menu-count">
+                {{ all_products|length }}
+            </span>
+
+            <span>items available</span>
+        </div>
+
+        <a href="/cafe/products/add/" class="add-product-btn">
+            <span>＋</span> Add Product
+        </a>
+
+    </div>
+
+
+    <div class="product-grid">
+
+        {% for product in all_products %}
+
+        <article class="product-card">
+
+            <div class="product-image-area">
+
+                {% if product.picture %}
+
+                    <img
+                        src="{{ product.picture.url }}"
+                        class="product-image"
+                        alt="{{ product.product_name }}"
+                    >
+
+                {% elif product.product_name|lower == "coffee" %}
+
+                    <img
+                        src="{% static 'assets/products/coffee.png' %}"
+                        class="product-image"
+                        alt="Coffee"
+                    >
+
+                {% elif product.product_name|lower == "frappe" %}
+
+                    <img
+                        src="{% static 'assets/products/frappe.png' %}"
+                        class="product-image"
+                        alt="Frappe"
+                    >
+
+                {% elif product.product_name|lower == "tea" %}
+
+                    <img
+                        src="{% static 'assets/products/tea.png' %}"
+                        class="product-image"
+                        alt="Tea"
+                    >
+
+                {% elif product.product_name|lower == "prawn sandwich" %}
+
+                    <img
+                        src="{% static 'assets/products/prawn_sandwich.png' %}"
+                        class="product-image"
+                        alt="Prawn Sandwich"
+                    >
+
+                {% elif product.product_name|lower == "japanese noodles" %}
+
+                    <img
+                        src="{% static 'assets/products/japanese_noodles.png' %}"
+                        class="product-image"
+                        alt="Japanese Noodles"
+                    >
+
+                {% else %}
+
+                    <div class="product-placeholder">
+                        <span>☕</span>
+                    </div>
+
+                {% endif %}
+
+
+                {% if product.availability %}
+
+                    <span class="availability available">
+                        Available
+                    </span>
+
+                {% else %}
+
+                    <span class="availability unavailable">
+                        Unavailable
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="product-info">
+
+                <p class="product-category">
+                    {{ product.category }}
+                </p>
+
+                <h2>
+                    {{ product.product_name }}
+                </h2>
+
+
+                <div class="product-bottom">
+
+                    <span class="product-price">
+                        ₹{{ product.price }}
+                    </span>
+
+
+                    <div class="product-actions">
+
+                        <a
+                            href="{% url 'product_update' product.id %}"
+                            class="edit-btn"
+                        >
+                            Edit
+                        </a>
+
+                        <a
+                            href="{% url 'product_delete' product.id %}"
+                            class="delete-btn"
+                        >
+                            Delete
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="empty-menu">
+
+            <div>🌸</div>
+
+            <h2>The menu is waiting for you.</h2>
+
+            <p>
+                No products have been added yet.
+            </p>
+
+            <a href="/cafe/products/add/" class="add-product-btn">
+                ＋ Add First Product
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

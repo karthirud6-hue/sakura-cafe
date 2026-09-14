@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="form-page">
+
+    <div class="form-card product-form-card">
+
+        <div class="form-heading">
+
+            <p class="menu-eyebrow">🌸 SAKURA CAFÉ</p>
+
+            <h1>Add Product</h1>
+
+            <p>
+                Add a new item to the café menu.
+            </p>
+
+        </div>
+
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+
+            {% if product_form.errors %}
+
+                <div class="form-errors">
+                    Please correct the errors below.
+                </div>
+
+            {% endif %}
+
+
+            <div class="form-field">
+
+                <label for="{{ product_form.product_name.id_for_label }}">
+                    Product Name
+                </label>
+
+                {{ product_form.product_name }}
+
+                {{ product_form.product_name.errors }}
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="{{ product_form.category.id_for_label }}">
+                    Category
+                </label>
+
+                {{ product_form.category }}
+
+                {{ product_form.category.errors }}
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="{{ product_form.price.id_for_label }}">
+                    Price
+                </label>
+
+                {{ product_form.price }}
+
+                {{ product_form.price.errors }}
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="{{ product_form.picture.id_for_label }}">
+                    Product Image
+                </label>
+
+                {{ product_form.picture }}
+
+                {{ product_form.picture.errors }}
+
+            </div>
+
+
+            <div class="availability-field">
+
+                {{ product_form.availability }}
+
+                <label for="{{ product_form.availability.id_for_label }}">
+                    Available on menu
+                </label>
+
+            </div>
+
+
+            <div class="form-buttons">
+
+                <button
+                    type="submit"
+                    class="save-product-btn"
+                >
+                    Save Product
+                </button>
+
+                <a
+                    href="/cafe/products/"
+                    class="cancel-product-btn"
+                >
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
