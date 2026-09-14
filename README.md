@@ -1,34 +1,26 @@
 # 🌸 Sakura Café
 
-### Japanese-Inspired Café Management System
+A Japanese-inspired café management system developed as a **Full Stack CRUD Project** using Django and MySQL.
 
-**Developed by RUDHRA KARTHIKEYAN**
-
-B.Tech – Artificial Intelligence and Data Science  
-V.S.B Engineering College, Karur
+Sakura Café provides a simple and elegant interface for managing café products, customers, and orders while demonstrating the core concepts of a full-stack web application.
 
 ---
 
-> A little taste of Japan, served with warmth. 🌸☕
->
-> ---
-
 ## 📌 Project Overview
 
-Sakura Café is a web-based café management system built using
-the Django framework and MySQL.
+**Sakura Café** is a web-based café management application built using the Django framework.
 
-The application provides a centralized platform for managing
-the core operations of a café, including products, customers,
-and orders.
+The application allows users to:
 
-The project follows the CRUD architecture, allowing authorized
-users to create, view, update, and delete records through a
-simple and responsive web interface.
+- Manage café products
+- Upload product images
+- Manage customers
+- Manage orders
+- Create, update, and delete records
+- Register and authenticate users
+- Access protected management pages after login
 
-The application also includes user authentication, product
-image uploads, database relationships, and a Japanese-inspired
-café interface.
+The project combines a Japanese-inspired user interface with a functional CRUD-based backend.
 
 ---
 
@@ -36,51 +28,53 @@ café interface.
 
 ### 🔐 User Authentication
 
-- User registration and account creation
-- Secure login and logout
+- User registration
+- User login
+- User logout
 - Custom Django user model
-- Password-based authentication
-- Protected management pages
+- Password authentication
+- Protected customer and order management pages
 
 ### ☕ Product Management
 
-- Add new café products
+- Add new products
 - View all products
-- Edit existing products
+- Update product details
 - Delete products
 - Set product availability
 - Upload product images
-- Display product images in the menu
+- Display product images on the menu
 
 ### 👥 Customer Management
 
-- Add new customers
+- Add customers
 - View customer records
-- Edit customer information
+- Update customer information
 - Delete customers
 - Store customer registration dates
 
 ### 🧾 Order Management
 
-- Create new orders
+- Create orders
 - View all orders
-- Edit existing orders
+- Update orders
 - Delete orders
-- Associate orders with customers and products
+- Select customers and products
 - Store order number, date, and quantity
 
 ### 🌸 User Interface
 
 - Japanese-inspired Sakura Café theme
-- Responsive design
+- Responsive layout
 - Custom navigation bar
-- Interactive product cards
-- Styled authentication pages
+- Hero section
+- Product cards
 - Customer management interface
-- Orders management table
-- Mobile-friendly layout
+- Orders table
+- Styled authentication pages
+- Responsive mobile design
 
-  ---
+---
 
 ## 🛠️ Technologies Used
 
@@ -89,29 +83,23 @@ café interface.
 - HTML5
 - CSS3
 - Bootstrap 5
-- Django Templates
 
 ### Backend
 
 - Python
-- Django 5
+- Django
 
 ### Database
 
 - MySQL
 
-### Development Tools
+### Other
 
-- Visual Studio Code
-- Git
-- GitHub
-
-### Python Libraries
-
-- Django
-- django-bootstrap5
-- mysqlclient
-- Pillow
+- Django ORM
+- Django Forms
+- Django Authentication
+- Django File/Image Uploads
+- Git & GitHub
 
 ---
 
@@ -123,7 +111,6 @@ Fullstack_Cafe/
 ├── Cafe/
 │   ├── migrations/
 │   ├── admin.py
-│   ├── apps.py
 │   ├── forms.py
 │   ├── models.py
 │   ├── urls.py
@@ -132,7 +119,6 @@ Fullstack_Cafe/
 ├── OrderManagement/
 │   ├── migrations/
 │   ├── admin.py
-│   ├── apps.py
 │   ├── forms.py
 │   ├── models.py
 │   ├── urls.py
@@ -140,8 +126,6 @@ Fullstack_Cafe/
 │
 ├── authentication/
 │   ├── migrations/
-│   ├── admin.py
-│   ├── apps.py
 │   ├── models.py
 │   ├── urls.py
 │   └── views.py
@@ -173,61 +157,3 @@ Fullstack_Cafe/
 ├── manage.py
 ├── .gitignore
 └── README.md
-
-
----
-
-## 🗄️ Database Design
-
-Sakura Café uses **MySQL** as its relational database.
-
-The application contains the following main entities:
-
-### Product
-
-Stores the café menu items.
-
-| Field | Description |
-|---|---|
-| Product Name | Name of the menu item |
-| Category | Product category |
-| Price | Product price |
-| Availability | Whether the product is currently available |
-| Picture | Uploaded product image |
-
-### Customer
-
-Stores café customer information.
-
-| Field | Description |
-|---|---|
-| Customer Name | Name of the customer |
-| Customer Since | Date the customer was added |
-
-### Orders
-
-Stores customer orders.
-
-| Field | Description |
-|---|---|
-| Customer Reference | Customer associated with the order |
-| Product Reference | Product associated with the order |
-| Order Number | Unique order identifier |
-| Order Date | Date of the order |
-| Quantity | Quantity ordered |
-| Amount | Order amount |
-| GST Amount | GST applicable to the order |
-| Bill Amount | Final bill amount |
-
-### User
-
-The authentication system uses a custom Django user model based on Django's `AbstractUser`.
-
-Additional user information includes:
-
-- Username
-- First name
-- Last name
-- Email
-- Age
-- Password
