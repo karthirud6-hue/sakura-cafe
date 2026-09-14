@@ -79,3 +79,36 @@ café interface.
 - Customer management interface
 - Orders management table
 - Mobile-friendly layout
+
+  ---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- HTML5
+- CSS3
+- Bootstrap 5
+- Django Templates
+
+### Backend
+
+- Python
+- Django 5
+
+### Database
+
+- MySQL
+
+### Development Tools
+
+- Visual Studio Code
+- Git
+- GitHub
+
+### Python Libraries
+
+- Django
+- django-bootstrap5
+- mysqlclient
+- Pillow
