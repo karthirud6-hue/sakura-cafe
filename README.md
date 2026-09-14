@@ -112,3 +112,64 @@ café interface.
 - django-bootstrap5
 - mysqlclient
 - Pillow
+
+---
+
+## 🏗️ Project Structure
+
+```text
+Fullstack_Cafe/
+│
+├── Cafe/
+│   ├── migrations/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── OrderManagement/
+│   ├── migrations/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── authentication/
+│   ├── migrations/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── Fullstack_Cafe/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── static/
+│   ├── assets/
+│   └── css/
+│
+├── templates/
+│   ├── base.html
+│   ├── home.html
+│   ├── login.html
+│   ├── signup.html
+│   ├── products.html
+│   ├── products_add.html
+│   ├── customers.html
+│   ├── customers_add.html
+│   ├── orders.html
+│   ├── orders_add.html
+│   ├── navbar.html
+│   └── footer.html
+│
+├── manage.py
+├── .gitignore
+└── README.md
